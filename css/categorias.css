@@ -1,0 +1,598 @@
+
+/*
+1. VARIABLES Y RESET BÁSICO
+*/
+
+:root {
+    /* Color principal (Verde de referencia) */
+    --color-primary: #4CAF50; 
+    /* Color secundario (Texto oscuro) */
+    --color-dark: #333;
+    /* Color de texto más oscuro (para títulos) */
+    --color-darker: #1a1a1a; 
+    /* Color de fondo suave */
+    --color-background-soft: #f4f4f4;
+    /* Unidad base para espaciado y tipografía */
+    --spacing-unit: 1rem;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    color: var(--color-dark);
+    background-color: var(--color-background-soft);
+    line-height: 1.6;
+    font-size: 16px; 
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-primary);
+}
+
+/*
+2. ENCABEZADO (HEADER) - FLEXBOX
+*/
+
+header {
+    background-color: white;
+    padding: var(--spacing-unit) 2rem;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    flex-wrap: wrap; 
+}
+
+header .logo img {
+    max-width: 50px;
+    height: auto;
+}
+
+/* Iconos de búsqueda y carrito */
+.icon-search, .icon-cart {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}
+
+.header-search {
+    flex-grow: 1; 
+    margin-right: 2rem; 
+    max-width: 500px; 
+}
+
+.header-search form {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 20px; 
+    padding: 0.2rem 0.5rem;
+    background-color: var(--color-background-soft);
+    width: 100%; 
+}
+
+.header-search input {
+    border: none;
+    padding: 0.5rem;
+    outline: none;
+    background-color: transparent;
+    width: 100%; 
+    font-size: 1rem;
+}
+
+.header-search button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-dark);
+    padding: 0.5rem;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex; 
+    gap: 1.5rem;
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--color-dark);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+header nav a:hover,
+header nav a.active {
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 0.2rem;
+}
+
+/*
+3. CONTENIDO PRINCIPAL (MAIN)
+*/
+
+main {
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 0 1rem; 
+}
+
+section {
+    padding: 3rem 0;
+}
+
+h2, h3 {
+    margin-bottom: 1.5rem;
+    color: var(--color-primary);
+    text-align: center;
+}
+
+/*
+4. PIE DE PÁGINA (FOOTER) - FLEXBOX
+*/
+
+footer {
+    background-color: var(--color-dark);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer > div, footer > p, footer > img {
+    margin: 0.5rem 1rem; /* Añadir margen para separar elementos */
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer img.logo, footer .footer-social img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain; /* Para asegurar que el logo se vea completo */
+}
+
+/* 
+5. MEDIA QUERIES (RESPONSIVE) - GENERALES
+
+*/
+
+@media (max-width: 768px) {
+    
+    /* HEADER: Apilar elementos */
+    header {
+        flex-direction: column; 
+        padding: 1rem;
+        align-items: flex-start;
+    }
+    
+    header .logo {
+        margin-bottom: 1rem;
+    }
+    
+    .header-search {
+        order: 3; 
+        width: 100%;
+        margin: 1rem 0 0.5rem 0; 
+        flex-grow: 0;
+        max-width: none;
+    }
+    
+    header nav {
+        order: 2;
+        width: 100%;
+    }
+
+    header nav ul {
+        margin-top: 0;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    /* FOOTER: Apilar elementos */
+    footer {
+        flex-direction: column;
+    }
+}
+
+
+/* 
+6. ESTILOS PARA LA PÁGINA DE CATEGORÍAS (LISTADO Y MENÚ DESPLEGABLE)
+*/
+
+/* Contenedor principal de dos columnas (Filtros + Listado) */
+.category-layout {
+    display: grid;
+    grid-template-columns: 250px 1fr; 
+    gap: 2rem;
+    margin-top: 1rem;
+    align-items: flex-start;
+}
+
+/* Sidebar de Filtros */
+.category-filters {
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.category-filters h3 {
+    text-align: left;
+    color: var(--color-dark);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 0.5rem;
+}
+
+/* Listado de Productos */
+.product-listing h4 {
+    color: var(--color-dark);
+    text-align: left;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Cuadrícula de productos de la categoría */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 1.5rem;
+}
+
+/* Estilos de la tarjeta de producto en las categorías */
+.product-card-category {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between;
+    height: 100%; /* Asegura que todas las tarjetas tengan la misma altura */
+}
+
+/*
+* ----------------------------------------------------
+* REGLAS CLAVE PARA CONTROLAR EL TAMAÑO DE LAS IMÁGENES
+* ----------------------------------------------------
+*/
+
+/* 1. Contenedor de la imagen (Define el espacio reservado) */
+.product-card-category .product-image-small {
+    /* Altura fija para el contenedor */
+    height: 150px; 
+    width: 100%;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    
+    /* Centra la imagen y oculta el exceso */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+    background-color: transparent; 
+}
+
+/* 2. La imagen real <img> dentro del contenedor */
+.product-card-category .product-image-small img {
+    /* Hace que la imagen llene el 100% del contenedor */
+    width: 100%;
+    height: 100%;
+    
+    /* Usar contain para mostrar la imagen COMPLETA sin recortar */
+    object-fit: contain; 
+    display: block;
+}
+
+/*
+* ----------------------------------------------------
+* FIN REGLAS DE TAMAÑO DE IMAGEN
+* ----------------------------------------------------
+*/
+
+
+.product-card-category h5 {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+    color: var(--color-dark);
+}
+
+.product-card-category .description {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+    /* Limita la altura de la descripción para tarjetas uniformes */
+    height: 36px; 
+    overflow: hidden;
+}
+
+.product-card-category .price {
+    font-weight: bold;
+    color: var(--color-primary);
+    display: block;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+
+/* --- ESTILOS MEJORADOS PARA EL BOTÓN AÑADIR --- */
+.product-card-category .add-to-cart-btn {
+    background-color: #8BC34A; /* Verde clarito */
+    color: white;
+    border: none;
+    padding: 0.8rem 1.8rem; 
+    margin-top: auto; /* Empuja el botón al final de la tarjeta */
+    cursor: pointer;
+    border-radius: 6px; 
+    font-weight: bold;
+    font-size: 1.05rem; 
+    transition: background-color 0.3s ease; 
+    width: 100%; 
+}
+
+.product-card-category .add-to-cart-btn:hover {
+    background-color: #689F38; /* Verde más oscuro al pasar el ratón */
+}
+/* --- FIN ESTILOS DEL BOTÓN AÑADIR --- */
+
+
+/* --- ESTILOS DE LISTA ANIDADA (MENÚ DESPLEGABLE) --- */
+
+.filter-menu-nested ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.filter-menu-nested li {
+    padding: 0; 
+}
+
+/* Estilo base para todos los enlaces del menú */
+.filter-menu-nested a {
+    display: block;
+    padding: 0.5rem 0.5rem;
+    color: var(--color-dark);
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+    font-size: 0.9rem;
+}
+
+/* Nivel Principal: CATEGORÍA PRINCIPAL */
+.main-category > a {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--color-darker);
+    padding: 0.75rem 0;
+    border-bottom: 2px solid var(--color-background-soft);
+    margin-bottom: 0.75rem;
+    cursor: pointer; 
+}
+
+/* Si la categoría principal está activa (seleccionada) */
+.main-category.active > a {
+    color: var(--color-primary); 
+    border-bottom: 2px solid var(--color-primary);
+}
+
+/* OCULTAR SUB-LISTAS POR DEFECTO (Comportamiento Desplegable) */
+.sub-category-list {
+    padding-left: 0; 
+    margin-top: 0.5rem;
+    display: none; 
+}
+
+/* MOSTRAR SUB-LISTAS SI EL PADRE TIENE LA CLASE .active */
+.main-category.active > .sub-category-list {
+    display: block; 
+}
+
+
+/* Nivel 1: Subcategorías (Indentación) */
+.sub-category-item a {
+    font-weight: 500;
+    padding-left: 1rem; 
+}
+
+.sub-category-item a:hover,
+.sub-category-item.active a { 
+    background-color: var(--color-background-soft);
+    border-radius: 4px;
+    color: var(--color-darker);
+}
+
+/* 
+7. ESTILOS DEL CARRITO DESPLEGABLE (MODAL/SIDEBAR)
+*/
+
+.cart-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 350px; 
+    height: 100%;
+    background-color: white;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transform: translateX(100%); 
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-modal.visible {
+    transform: translateX(0); 
+}
+
+.cart-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.cart-header h3 {
+    margin: 0;
+    color: var(--color-darker);
+}
+
+.cart-header .close-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--color-dark);
+}
+
+.cart-items-list {
+    flex-grow: 1; 
+    overflow-y: auto; 
+    margin-bottom: 1rem;
+}
+
+.cart-item-row {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 0.5rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-item-name {
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.cart-item-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+}
+
+.qty-btn {
+    background-color: var(--color-background-soft);
+    border: 1px solid #ccc;
+    padding: 0.1rem 0.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin: 0 0.2rem;
+}
+
+.subtotal {
+    font-weight: bold;
+    color: var(--color-primary);
+    min-width: 60px; 
+    text-align: right;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0 0.5rem;
+}
+
+.cart-footer {
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+
+.cart-footer h4 {
+    color: var(--color-darker);
+    margin-bottom: 1rem;
+}
+
+.btn-checkout {
+    display: block;
+    background-color: var(--color-primary);
+    color: white;
+    padding: 0.75rem;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.btn-checkout.disabled-for-min-purchase {
+    background-color: #ccc !important;
+    cursor: not-allowed !important;
+    pointer-events: none; 
+}
+
+.btn-continue {
+    background: none;
+    border: none;
+    color: var(--color-dark);
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* 
+8. MEDIA QUERIES ESPECÍFICAS PARA CATEGORÍAS
+*/
+
+@media (max-width: 900px) {
+    .category-layout {
+        /* Reducir el tamaño del menú lateral */
+        grid-template-columns: 180px 1fr; 
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Para moviles apilar los filtros encima del listado (una sola columna) */
+    .category-layout {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .category-filters {
+        order: 1; 
+    }
+    
+    .product-listing {
+        order: 2; 
+    }
+    
+    /* Reducimos el tamaño mínimo de la tarjeta de producto */
+    .category-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+
+    /* Reducir la altura de la imagen en móvil */
+    .product-card-category .product-image-small {
+        height: 120px;
+    }
+}
