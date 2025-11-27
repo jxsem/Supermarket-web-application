@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supermercado Online - Categorías</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css"> 
+    <link rel="stylesheet" type="text/css" href="/css/categorias.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="/img/logo.jpg" alt="logo" class="logo" width="50px" height="50px">
+        </div>
+        
+        <div class="header-search">
+            <form action="/search" method="get">
+                <input type="search" name="q" placeholder="Buscar productos">
+                <button type="submit">
+                    <img src="/img/lupa.svg" alt="Buscar" class="icon-search">
+                </button>
+            </form>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#" class="active">Categorias</a></li>
+                <li><a href="#bottom">Contacto</a></li>
+                <li><a href="#">Identifícate</a></li>
+                <li>
+                    <a href="#" id="btn-mostrar-carrito"> 
+                        <img src="/img/carrito.svg" alt="Carrito de compras" class="icon-cart">
+                        (<span id="contador-carrito">0</span>)
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="category-page-main">
+
+        <div class="category-layout">
+            
+            <aside class="category-filters">
+                <h3>Categorías</h3>
+                
+                <nav class="filter-menu-nested">
+                    <ul>
+                        <li class="main-category">
+                            <a href="#">Aceite, especias y salsas</a>
+                            <ul class="sub-category-list">
+                                <li class="sub-category-item"><a href="#">Aceite, vinagre y sal</a></li>
+                                <li class="sub-category-item"><a href="#">Especias</a></li>
+                                <li class="sub-category-item"><a href="#">Mayonesa, ketchup y mostaza</a></li>
+                                <li class="sub-category-item"><a href="#">Otras salsas</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="main-category">
+                            <a href="#">Agua y refrescos</a>
+                            <ul class="sub-category-list">
+                                <li class="sub-category-item"><a href="#">Agua</a></li>
+                                <li class="sub-category-item"><a href="#">Isotónico y energético</a></li>
+                                <li class="sub-category-item"><a href="#">Refresco de cola</a></li>
+                                <li class="sub-category-item"><a href="#">Refresco de naranja y de limón</a></li>
+                                <li class="sub-category-item"><a href="#">Tónica y bitter</a></li>
+                                <li class="sub-category-item"><a href="#">Refresco de té y sin gas</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="main-category">
+                            <a href="#">Aperitivos</a>
+                            <ul class="sub-category-list">
+                                <li class="sub-category-item"><a href="#">Patatas fritas y snacks</a></li>
+                                <li class="sub-category-item"><a href="#">Frutos secos</a></li>
+                                <li class="sub-category-item"><a href="#">Aceitunas y encurtidos</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="main-category">
+                            <a href="#">Arroz, legumbres y pasta</a>
+                            <ul class="sub-category-list">
+                                <li class="sub-category-item"><a href="#">Arroz</a></li>
+                                <li class="sub-category-item"><a href="#">Legumbres</a></li>
+                                <li class="sub-category-item"><a href="#">Pasta seca</a></li>
+                                <li class="sub-category-item"><a href="#">Pasta fresca y salsas</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="main-category">
+                            <a href="#">Azúcar, caramelos y chocolate</a>
+                            <ul class="sub-category-list">
+                                <li class="sub-category-item"><a href="#">Azúcar y edulcorantes</a></li>
+                                <li class="sub-category-item"><a href="#">Chocolates y tabletas</a></li>
+                                <li class="sub-category-item"><a href="#">Caramelos y chicles</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="main-category">
+                            <a href="#">Bebé</a>
+                            <ul class="sub-category-list">
+                                <li class="sub-category-item"><a href="#">Alimentación infantil</a></li>
+                                <li class="sub-category-item"><a href="#">Pañales y toallitas</a></li>
+                                <li class="sub-category-item"><a href="#">Higiene bebé</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="main-category">
+                            <a href="#">Bodega</a>
+                            <ul class="sub-category-list">
+                                <li class="sub-category-item"><a href="#">Vinos tintos</a></li>
+                                <li class="sub-category-item"><a href="#">Vinos blancos y rosados</a></li>
+                                <li class="sub-category-item"><a href="#">Cervezas</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="main-category">
+                            <a href="#">Cacao, café e infusiones</a>
+                            <ul class="sub-category-list">
+                                <li class="sub-category-item"><a href="#">Café molido y grano</a></li>
+                                <li class="sub-category-item"><a href="#">Cápsulas y monodosis</a></li>
+                                <li class="sub-category-item"><a href="#">Cacao</a></li>
+                                <li class="sub-category-item"><a href="#">Infusiones y tés</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="main-category">
+                            <a href="#">Cereales y galletas</a>
+                            <ul class="sub-category-list">
+                                <li class="sub-category-item"><a href="#">Cereales de desayuno</a></li>
+                                <li class="sub-category-item"><a href="#">Galletas dulces</a></li>
+                                <li class="sub-category-item"><a href="#">Galletas saladas</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="main-category">
+                            <a href="#">Congelados</a>
+                            <ul class="sub-category-list">
+                                <li class="sub-category-item"><a href="#">Verduras congeladas</a></li>
+                                <li class="sub-category-item"><a href="#">Pescados y mariscos congelados</a></li>
+                                <li class="sub-category-item"><a href="#">Comidas preparadas congeladas</a></li>
+                                <li class="sub-category-item"><a href="#">Helados</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="main-category">
+                            <a href="#">Conservas, caldos y cremas</a>
+                            <ul class="sub-category-list">
+                                <li class="sub-category-item"><a href="#">Conservas de pescado</a></li>
+                                <li class="sub-category-item"><a href="#">Conservas de verduras</a></li>
+                                <li class="sub-category-item"><a href="#">Caldos y sopas</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="main-category">
+                            <a href="#">Cuidado del cabello</a>
+                            <ul class="sub-category-list">
+                                <li class="sub-category-item"><a href="#">Champús y acondicionadores</a></li>
+                                <li class="sub-category-item"><a href="#">Mascarillas y tratamientos</a></li>
+                                <li class="sub-category-item"><a href="#">Tintes</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="main-category">
+                            <a href="#">Cuidado facial y corporal</a>
+                            <ul class="sub-category-list">
+                                <li class="sub-category-item"><a href="#">Cremas y lociones corporales</a></li>
+                                <li class="sub-category-item"><a href="#">Cuidado facial</a></li>
+                                <li class="sub-category-item"><a href="#">Geles de baño y jabones</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="main-category">
+                            <a href="#">Fitoterapia y parafarmacia</a>
+                            <ul class="sub-category-list">
+                                <li class="sub-category-item"><a href="#">Vitaminas y complementos</a></li>
+                                <li class="sub-category-item"><a href="#">Productos naturales</a></li>
+                                <li class="sub-category-item"><a href="#">Primeros auxilios</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="main-category active">
+                            <a href="#">Fruta y verdura</a>
+                            <ul class="sub-category-list">
+                                <li class="sub-category-item"><a href="#">Fruta de temporada</a></li>
+                                <li class="sub-category-item"><a href="#">Verdura fresca</a></li>
+                                <li class="sub-category-item"><a href="#">Ensaladas preparadas</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="main-category">
+                            <a href="#">Huevos, leche y mantequilla</a>
+                            <ul class="sub-category-list">
+                                <li class="sub-category-item"><a href="#">Leche</a></li>
+                                <li class="sub-category-item"><a href="#">Huevos</a></li>
+                                <li class="sub-category-item"><a href="#">Mantequilla y margarina</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="main-category">
+                            <a href="#">Limpieza y hogar</a>
+                            <ul class="sub-category-list">
+                                <li class="sub-category-item"><a href="#">Detergentes para ropa</a></li>
+                                <li class="sub-category-item"><a href="#">Limpieza de cocina</a></li>
+                                <li class="sub-category-item"><a href="#">Limpieza de baño</a></li>
+                                <li class="sub-category-item"><a href="#">Bolsas de basura</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="main-category">
+                            <a href="#">Maquillaje</a>
+                            <ul class="sub-category-list">
+                                <li class="sub-category-item"><a href="#">Rostro (bases, correctores)</a></li>
+                                <li class="sub-category-item"><a href="#">Ojos (máscara, sombras)</a></li>
+                                <li class="sub-category-item"><a href="#">Labios (pintalabios)</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="main-category">
+                            <a href="#">Marisco y pescado</a>
+                            <ul class="sub-category-list">
+                                <li class="sub-category-item"><a href="#">Pescado fresco</a></li>
+                                <li class="sub-category-item"><a href="#">Mariscos</a></li>
+                                <li class="sub-category-item"><a href="#">Pescado congelado</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="main-category">
+                            <a href="#">Mascotas</a>
+                            <ul class="sub-category-list">
+                                <li class="sub-category-item"><a href="#">Comida para perros</a></li>
+                                <li class="sub-category-item"><a href="#">Comida para gatos</a></li>
+                                <li class="sub-category-item"><a href="#">Accesorios</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="main-category">
+                            <a href="#">Panadería y pastelería</a>
+                            <ul class="sub-category-list">
+                                <li class="sub-category-item"><a href="#">Pan del día</a></li>
+                                <li class="sub-category-item"><a href="#">Pan de molde</a></li>
+                                <li class="sub-category-item"><a href="#">Bollería</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="main-category">
+                            <a href="#">Pizzas y platos preparados</a>
+                            <ul class="sub-category-list">
+                                <li class="sub-category-item"><a href="#">Pizzas</a></li>
+                                <li class="sub-category-item"><a href="#">Platos preparados refrigerados</a></li>
+                                <li class="sub-category-item"><a href="#">Sushi</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="main-category">
+                            <a href="#">Postres y yogures</a>
+                            <ul class="sub-category-list">
+                                <li class="sub-category-item"><a href="#">Yogures</a></li>
+                                <li class="sub-category-item"><a href="#">Postres lácteos</a></li>
+                                <li class="sub-category-item"><a href="#">Natas y flanes</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="main-category">
+                            <a href="#">Zumos</a>
+                            <ul class="sub-category-list">
+                                <li class="sub-category-item"><a href="#">Zumos refrigerados</a></li>
+                                <li class="sub-category-item"><a href="#">Zumos envasados</a></li>
+                                <li class="sub-category-item"><a href="#">Néctares</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </nav>
+            </aside>
+            
+            <section class="product-listing">
+                <div id="product-content-area">
+                    <h2>Fruta y Verdura Fresca</h2> 
+                    
+                    <div class="category-grid">
+                        
+                        <article class="product-card-category">
+                            <div class="product-image-small"></div>
+                            <h5>Tomate Pera</h5>
+                            <p class="description">Tomate de gran sabor, ideal para ensaladas.</p>
+                            <span class="price">€3.20 / kg</span>
+                            <button class="add-to-cart-btn" data-id="CAT_TB01" data-name="Tomate Pera" data-price="3.20">Añadir</button>
+                        </article>
+                        
+                        <article class="product-card-category">
+                            <div class="product-image-small"></div>
+                            <h5>Aguacate (Pieza)</h5>
+                            <p class="description">Pieza de aguacate Hass maduro, listo para comer.</p>
+                            <span class="price">€1.50 / pieza</span>
+                            <button class="add-to-cart-btn" data-id="CAT_AG02" data-name="Aguacate (Pieza)" data-price="1.50">Añadir</button>
+                        </article>
+
+                        <article class="product-card-category">
+                            <div class="product-image-small"></div>
+                            <h5>Naranja de Zumo</h5>
+                            <p class="description">Malla de 3kg de naranja para zumo.</p>
+                            <span class="price">€4.99 / malla</span>
+                            <button class="add-to-cart-btn" data-id="CAT_NZ03" data-name="Naranja de Zumo (3kg)" data-price="4.99">Añadir</button>
+                        </article>
+                        
+                        </div>
+                    
+                </div> 
+            </section>
+        </div>
+        
+        <div id="cart-modal" class="cart-modal">
+            <div class="cart-content">
+                <div class="cart-header">
+                    <h3>Mi Carrito</h3>
+                    <button class="close-btn" onclick="closeCartModal()">✖</button>
+                </div>
+                
+                <div class="cart-items-list" id="cart-items">
+                    <p style="padding: 1rem; text-align: center;">El carrito está vacío.</p>
+                </div>
+
+                <div class="cart-footer">
+                    <h4 id="cart-total">Subtotal: €0.00</h4>
+                    <a href="procesar_compra.html" class="btn-checkout">Ir a Pagar</a>
+                    <button class="btn-continue" onclick="closeCartModal()">Seguir Comprando</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="contact-info">
+            <p id="bottom">Contactosupermercado@gmail.com</p>
+        </div>
+        <div class="direcction">
+            <a href="https://www.google.com/maps?client=safari&sca_esv=73b67a38cfd61733&rls=en&sxsrf=AE3TifPenW3AS8z4nXU3YAhF-Z2E_KHB8w:1764057879396&uact=5&gs_lp=Egxnd3Mtd2l6LXNlcnAiDmZydXRlcmlhIHJ1ZWRhMgQQIxgnMgsQLhiABBjHARivATIFEAAYgAQyBhAAGBYYHjIGEAAYFhgeMgIQJjIIEAAYgAQYogQyCBAAGIAEGKIEMggQABiABBiiBDIIEAAYgAQYogRIsghQAFjiB3AAeAGQAQCYAYMBoAHXC6oBBDAuMTO4AQPIAQD4AQGYAgygAqILwgIKECMYgAQYJxiKBcICFhAuGIAEGLEDGNEDGEMYgwEYxwEYigXCAgoQABiABBhDGIoFwgIIEC4YgAQYsQPCAggQABiABBixA8ICEBAjGPAFGIAEGCcYyQIYigXCAg4QABiABBixAxiDARiKBcICBRAuGIAEwgILEC4YgAQYsQMYgwHCAgsQABiABBiSAxiKBcICDRAAGIAEGBQYhwIYyQPCAg0QABiABBixAxgUGIcCwgINEC4YgAQYsQMYQxiKBcICCBAAGIAEGJIDwgINEAAYgAQYsQMYQxiKBcICDhAuGIAEGMcBGI4FGK8BmAMAkgcEMC4xMqAHnMkBsgcEMC4xMrgHogvCBwYyLTExLjHIBzE&um=1&ie=UTF-8&fb=1&gl=es&sa=X&geocode=KfEvKqK65HENMQqNiQtDr9rz&daddr=C.+Ermita,+29,+18198+Huétor+Vega,+Granada" target="_self">C. Ermita, 29, 18198 Huétor Vega, Granada</a>
+        </div>
+        <div class="footer-social">
+            <img src="/img/facebook.png" alt="logo facebook" width="50px" height="50px" >
+        </div>
+        <img src="/img/logo.jpg" alt="logo" class="logo" width="50px" height="50px">
+
+        <p>Teléfono: 657 84 40 37</p>
+    </footer>
+
+    <script src="/javascript/cart-logic.js"></script>
+    <script src="/javascript/categorias.js"></script>
+    </body>
+</html>

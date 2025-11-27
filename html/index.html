@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supermercado Online - Home</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/css/categorias.css">
+    <link rel="icon" type="loogo/png" href="/img/logo.jpg">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="/img/logo.jpg" alt="logo" class="logo" width="50px" height="50px">
+        </div>
+        
+        <div class="header-search">
+            <form action="/search" method="get">
+                <input type="search" name="q" placeholder="Buscar productos">
+                <button type="submit">
+                    <img src="/img/lupa.svg" alt="Buscar" class="icon-search">
+                </button>
+            </form>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="categorias.html">Categorias</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Identifícate</a></li>
+                <li>
+                    <a href="#" id="btn-mostrar-carrito"> 
+                        <img src="/img/carrito.svg" alt="Carrito de compras" class="icon-cart">
+                        (<span id="contador-carrito">0</span>)
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="foto-negocio">
+                <img src="/img/foto-negocio.jpeg" alt="foto-negocio" width="360px" height="250px" >
+            </div>
+            <div class="welcome-text">
+                <h2>Bienvenido al supermercado</h2>
+                <p>En nuestro supermercado apostamos por la <strong>frescura real:</strong> frutas y verduras recién seleccionadas, congelados y panes del día y productos que llegan directo del productor a tu mesa.</p>
+                <p>Cuidamos cada paso para que encuentres sabor, seguridad y variedad en cada visita.</p>
+                <p class="slogan">Aquí lo fresco no es un eslogan, es nuestra forma de trabajar.</p>
+            </div>
+        </section>
+
+        <section class="featured-products">
+        <section class="featured-products">
+    <h3>Solo aquí! Productos destacados</h3>
+
+    <div class="highlight-group product-section-group">
+        <h4 class="group-title">Producto del mes</h4> 
+        <div class="highlight-products-grid product-grid">
+            
+            <article class="product-card-category">
+                <div class="product-image-small">
+                    <img src="/imgProductos/aguacates-hass.jpg" alt="Aguacate Hass" loading="lazy" width="150" height="150">
+                </div>
+                <h5>Aguacate Hass</h5>
+                <p class="description">Pieza de aguacate maduro.</p>
+                <span class="price">€1.20 / pieza</span> 
+                <button class="add-to-cart-btn" data-id="P001" data-name="Aguacate Hass" data-price="1.20">Añadir</button>
+            </article>
+
+            <article class="product-card-category">
+                <div class="product-image-small">
+                    <img src="/imgProductos/tomate-pera.jpg" alt="Tomate Raf" loading="lazy" width="150" height="150">
+                </div>
+                <h5>Tomate Raf</h5>
+                <p class="description">Pieza grande de tomate.</p>
+                <span class="price">€0.95 / pieza</span>
+                <button class="add-to-cart-btn" data-id="P002" data-name="Tomate Raf" data-price="0.95">Añadir</button>
+            </article>
+
+            <article class="product-card-category">
+                <div class="product-image-small">
+                    <img src="/imgProductos/pimiento-rojo.jpg" alt="Pimiento Rojo" loading="lazy" width="150" height="150">
+                </div>
+                <h5>Pimiento Rojo</h5>
+                <p class="description">Pimiento.</p>
+                <span class="price">€1.50 / pieza</span>
+                <button class="add-to-cart-btn" data-id="P003" data-name="Pimiento Rojo" data-price="1.50">Añadir</button>
+            </article>
+        </div>
+    </div>
+    
+    <div class="seasonal-group product-section-group">
+        <h4 class="group-title">Producto por temporada</h4> 
+        <div class="seasonal-products-grid product-grid">
+            
+            <article class="product-card-category">
+                <div class="product-image-small">
+                    <img src="/imgProductos/naranja-mesa.png" alt="Naranja Navel" loading="lazy" width="150" height="150">
+                </div>
+                <h5>Naranja Navel</h5>
+                <p class="description">Pieza de naranja de zumo.</p>
+                <span class="price">€0.35 / pieza</span>
+                <button class="add-to-cart-btn" data-id="P004" data-name="Naranja Navel" data-price="0.35">Añadir</button>
+            </article>
+            
+            <article class="product-card-category">
+                <div class="product-image-small">
+                    <img src="/imgProductos/platano-canarias.jpg" alt="Plátano Canarias" loading="lazy" width="150" height="150">
+                </div>
+                <h5>Plátano Canarias</h5>
+                <p class="description">Pieza de plátano.</p>
+                <span class="price">€0.45 / pieza</span>
+                <button class="add-to-cart-btn" data-id="P005" data-name="Plátano Canarias" data-price="0.45">Añadir</button>
+            </article>
+            
+            <article class="product-card-category">
+                <div class="product-image-small">
+                    <img src="/imgProductos/cebolla-blanca.jpg" alt="Cebolla" loading="lazy" width="150" height="150">
+                </div>
+                <h5>Cebolla</h5>
+                <p class="description">Pieza de cebolla.</p>
+                <span class="price">€0.20 / pieza</span>
+                <button class="add-to-cart-btn" data-id="P006" data-name="Cebolla" data-price="0.20">Añadir</button>
+            </article>
+        </div>
+    </div>
+</section>
+
+    </main>
+    
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Mi Carrito</h3>
+                <button class="close-btn" onclick="closeCartModal()">✖</button> 
+            </div>
+            
+            <div class="cart-items-list" id="cart-items">
+                <p style="padding: 1rem; text-align: center;">El carrito está vacío.</p>
+            </div>
+
+            <div class="cart-footer">
+                <h4 id="cart-total">Subtotal: €0.00</h4>
+                <a href="procesar_compra.html" class="btn-checkout">Ir a Pagar</a>
+                <button class="btn-continue" onclick="closeCartModal()">Seguir Comprando</button>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="contact-info">
+            <p id="bottom">Contactosupermercado@gmail.com</p>
+        </div>
+        <div class="direcction">
+            <a href="https://www.google.com/maps?client=safari&sca_esv=73b67a38cfd61733&rls=en&sxsrf=AE3TifPenW3AS8z4nXU3YAhF-Z2E_KHB8w:1764057879396&uact=5&gs_lp=Egxnd3Mtd2l6LXNlcnAiDmZydXRlcmlhIHJ1ZWRhMgQQIxgnMgsQLhiABBjHARivATIFEAAYgAQyBhAAGBYYHjIGEAAYFhgeMgIQJjIIEAAYgAQYogQyCBAAGIAEGKIEMggQABiABBiiBDIIEAAYgAQYogRIsghQAFjiB3AAeAGQAQCYAYMBoAHXC6oBBDAuMTO4AQPIAQD4AQGYAgygAqILwgIKECMYgAQYJxiKBcICFhAuGIAEGLEDGNEDGEMYgwEYxwEYigXCAgoQABiABBhDGIoFwgIIEC4YgAQYsQPCAggQABiABBixA8ICEBAjGPAFGIAEGCcYyQIYigXCAg4QABiABBixAxiDARiKBcICBRAuGIAEwgILEC4YgAQYsQMYgwHCAgsQABiABBiSAxiKBcICDRAAGIAEGBQYhwIYyQPCAg0QABiABBixAxgUGIcCwgINEC4YgAQYsQMYQxiKBcICCBAAGIAEGJIDwgINEAAYgAQYsQMYQxiKBcICDhAuGIAEGMcBGI4FGK8BmAMAkgcEMC4xMqAHnMkBsgcEMC4xMrgHogvCBwYyLTExLjHIBzE&um=1&ie=UTF-8&fb=1&gl=es&sa=X&geocode=KfEvKqK65HENMQqNiQtDr9rz&daddr=C.+Ermita,+29,+18198+Huétor+Vega,+Granada" target="_self">C. Ermita, 29, 18198 Huétor Vega, Granada</a>
+        </div>
+        <div class="footer-social">
+            <img src="/img/facebook.png" alt="logo facebook" width="50px" height="50px" >
+        </div>
+        <img src="/img/logo.jpg" alt="logo" class="logo" width="50px" height="50px">
+
+        <p>Teléfono: 657 84 40 37</p>
+    </footer>
+
+    <script src="/javascript/products-data.js"></script>
+    <script src="/javascript/index-loader.js"></script>
+    <script src="/javascript/cart-logic.js"></script> 
+    <script src="/javascript/categorias.js"></script>
+</body>
+</html>

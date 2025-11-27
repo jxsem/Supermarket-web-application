@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procesar Compra - Supermercado Online</title>
+    <link rel="stylesheet" type="text/css" href="/css/procesar_compra.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="/img/logo.jpg" alt="logo" class="logo" width="50px" height="50px">
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="categorias.html">Categorias</a></li>
+                <li><a href="#" id="cart-icon"><img src="/img/carrito.svg" alt="Carrito" class="icon-cart"></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="checkout-page-main">
+        <section class="checkout-container">
+            <h2>Procesar compra</h2>
+            <a href="javascript:history.back()" class="back-link">
+                <img src="/img/back_arrow.svg" alt="Volver" width="50px"> Volver
+            </a> 
+
+            <div class="checkout-layout">
+                
+                <div class="payment-shipping-details">
+                    <form id="checkout-form">
+                        
+                        <h3>Opciones de Envío</h3>
+                        <div class="shipping-options">
+                            <label class="radio-option">
+                                <input type="radio" id="delivery" name="shipping-method" value="delivery" checked>
+                                Reparto a Domicilio
+                                <span class="shipping-cost-label" id="delivery-cost">Gratis</span> </label>
+                            <label class="radio-option">
+                                <input type="radio" id="pickup" name="shipping-method" value="pickup">
+                                Recogida en tienda
+                                <span class="shipping-cost-label">Gratis</span> </label>
+                        </div>
+                        
+                        <h3>Detalles de la Dirección</h3>
+                        <div class="form-group">
+                            <label for="email">Correo electrónico</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Nombre completo</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Dirección</label>
+                            <input type="text" id="address" required>
+                        </div>
+
+                        <div class="form-group">
+                                <label for="telf">Teléfono</label>
+                                <input type="number" id="tel" required>
+                        </div>
+
+                        <div class="form-group-inline">
+                            <div class="form-group">
+                                <label for="city">Pueblo/Ciudad</label>
+                                <input type="text" id="city" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="zip">Código postal</label>
+                                <input type="text" id="zip" required>
+                            </div>
+                        </div>
+                        <h3>Información del pago</h3>
+                        <div class="payment-options">
+                            
+                            <label class="radio-option">
+                                <input type="radio" id="card" name="payment-method" value="card" checked>
+                                Tarjeta de crédito
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" id="cash_on_delivery" name="payment-method" value="cash_on_delivery">
+                                Contrareembolso
+                            </label>
+                            
+                            <div class="card-details" id="card-details-section">
+                                <div class="form-group">
+                                    <label for="card-number">Número de tarjeta</label>
+                                    <input type="text" id="card-number" required>
+                                </div>
+                                <div class="form-group-inline">
+                                    <div class="form-group">
+                                        <label for="expiry">Caducidad</label>
+                                        <input type="text" id="expiry" placeholder="MM/AA" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cvv">CVV</label>
+                                        <input type="text" id="cvv" required> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group subscription-check">
+                            <label>
+                                <input type="checkbox" id="subscribe-newsletter">
+                                Mantengámonos en contacto! Suscríbete a nuestro boletín y recibe las mejores ofertas.
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="place-order-btn">Finalizar compra</button> </form>
+                </div>
+                
+                <div class="order-summary-card">
+                    <h3>Resumen del Pedido</h3>
+                    
+                    <div class="summary-items-list" id="summary-items">
+                        </div>
+                    
+                    <div class="summary-totals">
+                        <div class="summary-line">
+                            <span>Subtotal Productos</span>
+                            <span id="subtotal-amount">€0.00</span>
+                        </div>
+                        <div class="summary-line shipping-cost">
+                            <span>Gastos de Envío</span>
+                            <span id="shipping-amount">Gratis</span>
+                        </div>
+                        
+                        <div class="summary-line total">
+                            <span>Total a Pagar</span>
+                            <span id="total-amount">€0.00</span>
+                        </div>
+                    </div>
+                    
+                    <a href="categorias.html" class="edit-cart-link">Editar Carrito</a>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+
+<footer>
+        <div class="contact-info">
+            <p id="bottom">Contactosupermercado@gmail.com</p>
+        </div>
+        <div class="direcction">
+            <a href="https://www.google.com/maps?client=safari&sca_esv=73b67a38cfd61733&rls=en&sxsrf=AE3TifPenW3AS8z4nXU3YAhF-Z2E_KHB8w:1764057879396&uact=5&gs_lp=Egxnd3Mtd2l6LXNlcnAiDmZydXRlcmlhIHJ1ZWRhMgQQIxgnMgsQLhiABBjHARivATIFEAAYgAQyBhAAGBYYHjIGEAAYFhgeMgIQJjIIEAAYgAQYogQyCBAAGIAEGKIEMggQABiABBiiBDIIEAAYgAQYogRIsghQAFjiB3AAeAGQAQCYAYMBoAHXC6oBBDAuMTO4AQPIAQD4AQGYAgygAqILwgIKECMYgAQYJxiKBcICFhAuGIAEGLEDGNEDGEMYgwEYxwEYigXCAgoQABiABBhDGIoFwgIIEC4YgAQYsQPCAggQABiABBixA8ICEBAjGPAFGIAEGCcYyQIYigXCAg4QABiABBixAxiDARiKBcICBRAuGIAEwgILEC4YgAQYsQMYgwHCAgsQABiABBiSAxiKBcICDRAAGIAEGBQYhwIYyQPCAg0QABiABBixAxgUGIcCwgINEC4YgAQYsQMYQxiKBcICCBAAGIAEGJIDwgINEAAYgAQYsQMYQxiKBcICDhAuGIAEGMcBGI4FGK8BmAMAkgcEMC4xMqAHnMkBsgcEMC4xMrgHogvCBwYyLTExLjHIBzE&um=1&ie=UTF-8&fb=1&gl=es&sa=X&geocode=KfEvKqK65HENMQqNiQtDr9rz&daddr=C.+Ermita,+29,+18198+Huétor+Vega,+Granada" target="_self">C. Ermita, 29, 18198 Huétor Vega, Granada</a>
+        </div>
+        <div class="footer-social">
+            <img src="/img/facebook.png" alt="logo facebook" width="50px" height="50px" >
+        </div>
+        <img src="/img/logo.jpg" alt="logo" class="logo" width="50px" height="50px">
+
+        <p>Teléfono: 657 84 40 37</p>
+    </footer>
+
+    <script src="/javascript/checkout-logic.js"></script> 
+    </body>
+</html>
