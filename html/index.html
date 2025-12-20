@@ -16,8 +16,8 @@
         </div>
         
         <div class="header-search">
-            <form action="/search" method="get">
-                <input type="search" name="q" placeholder="Buscar productos">
+            <form action="/search" method="get" class="search-container">
+                <input type="text" id="buscador-principal" placeholder="Buscar productos...">
                 <button type="submit">
                     <img src="/img/lupa.svg" alt="Buscar" class="icon-search">
                 </button>
@@ -53,103 +53,87 @@
             </div>
         </section>
 
-        <section class="featured-products">
-        <section class="featured-products">
-    <h3>Solo aquí! Productos destacados</h3>
-
-    <div class="highlight-group product-section-group">
-        <h4 class="group-title">Producto del mes</h4> 
-        <div class="highlight-products-grid product-grid">
-            
-            <article class="product-card-category">
-                <div class="product-image-small">
-                    <img src="/imgProductos/aguacates-hass.jpg" alt="Aguacate Hass" loading="lazy" width="150" height="150">
-                </div>
-                <h5>Aguacate Hass</h5>
-                <p class="description">Pieza de aguacate maduro.</p>
-                <span class="price">€1.20 / pieza</span> 
-                <button class="add-to-cart-btn" data-id="P001" data-name="Aguacate Hass" data-price="1.20">Añadir</button>
-            </article>
-
-            <article class="product-card-category">
-                <div class="product-image-small">
-                    <img src="/imgProductos/tomate-pera.jpg" alt="Tomate Raf" loading="lazy" width="150" height="150">
-                </div>
-                <h5>Tomate Raf</h5>
-                <p class="description">Pieza grande de tomate.</p>
-                <span class="price">€0.95 / pieza</span>
-                <button class="add-to-cart-btn" data-id="P002" data-name="Tomate Raf" data-price="0.95">Añadir</button>
-            </article>
-
-            <article class="product-card-category">
-                <div class="product-image-small">
-                    <img src="/imgProductos/pimiento-rojo.jpg" alt="Pimiento Rojo" loading="lazy" width="150" height="150">
-                </div>
-                <h5>Pimiento Rojo</h5>
-                <p class="description">Pimiento.</p>
-                <span class="price">€1.50 / pieza</span>
-                <button class="add-to-cart-btn" data-id="P003" data-name="Pimiento Rojo" data-price="1.50">Añadir</button>
-            </article>
-        </div>
-    </div>
-    
-    <div class="seasonal-group product-section-group">
-        <h4 class="group-title">Producto por temporada</h4> 
-        <div class="seasonal-products-grid product-grid">
-            
-            <article class="product-card-category">
-                <div class="product-image-small">
-                    <img src="/imgProductos/naranja-mesa.png" alt="Naranja Navel" loading="lazy" width="150" height="150">
-                </div>
-                <h5>Naranja Navel</h5>
-                <p class="description">Pieza de naranja de zumo.</p>
-                <span class="price">€0.35 / pieza</span>
-                <button class="add-to-cart-btn" data-id="P004" data-name="Naranja Navel" data-price="0.35">Añadir</button>
-            </article>
-            
-            <article class="product-card-category">
-                <div class="product-image-small">
-                    <img src="/imgProductos/platano-canarias.jpg" alt="Plátano Canarias" loading="lazy" width="150" height="150">
-                </div>
-                <h5>Plátano Canarias</h5>
-                <p class="description">Pieza de plátano.</p>
-                <span class="price">€0.45 / pieza</span>
-                <button class="add-to-cart-btn" data-id="P005" data-name="Plátano Canarias" data-price="0.45">Añadir</button>
-            </article>
-            
-            <article class="product-card-category">
-                <div class="product-image-small">
-                    <img src="/imgProductos/cebolla-blanca.jpg" alt="Cebolla" loading="lazy" width="150" height="150">
-                </div>
-                <h5>Cebolla</h5>
-                <p class="description">Pieza de cebolla.</p>
-                <span class="price">€0.20 / pieza</span>
-                <button class="add-to-cart-btn" data-id="P006" data-name="Cebolla" data-price="0.20">Añadir</button>
-            </article>
-        </div>
-    </div>
-</section>
-
+        <div id="contenedor-resultados-busqueda"></div>
     </main>
-    
-    <div id="cart-modal" class="cart-modal">
-        <div class="cart-content">
-            <div class="cart-header">
-                <h3>Mi Carrito</h3>
-                <button class="close-btn" onclick="closeCartModal()">✖</button> 
+
+        <section class="featured-products" id="contenido-estatico-index">
+            <h3>Solo aquí! Productos destacados</h3>
+
+            <div class="highlight-group product-section-group">
+                <h4 class="group-title">Producto del mes</h4> 
+                <div class="highlight-products-grid product-grid">
+                    
+                    <article class="product-card-category">
+                        <div class="product-image-small">
+                            <img src="/imgProductos/aguacates-hass.jpg" alt="Aguacate Hass" loading="lazy" width="150" height="150">
+                        </div>
+                        <h5>Aguacate Hass</h5>
+                        <p class="description">Pieza de aguacate maduro.</p>
+                        <span class="price">€1.20 / pieza</span> 
+                        <button class="add-to-cart-btn" data-id="P001" data-name="Aguacate Hass" data-price="1.20">Añadir</button>
+                    </article>
+
+                    <article class="product-card-category">
+                        <div class="product-image-small">
+                            <img src="/imgProductos/tomate-pera.jpg" alt="Tomate Raf" loading="lazy" width="150" height="150">
+                        </div>
+                        <h5>Tomate Raf</h5>
+                        <p class="description">Pieza grande de tomate.</p>
+                        <span class="price">€0.95 / pieza</span>
+                        <button class="add-to-cart-btn" data-id="P002" data-name="Tomate Raf" data-price="0.95">Añadir</button>
+                    </article>
+
+                    <article class="product-card-category">
+                        <div class="product-image-small">
+                            <img src="/imgProductos/pimiento-rojo.jpg" alt="Pimiento Rojo" loading="lazy" width="150" height="150">
+                        </div>
+                        <h5>Pimiento Rojo</h5>
+                        <p class="description">Pimiento.</p>
+                        <span class="price">€1.50 / pieza</span>
+                        <button class="add-to-cart-btn" data-id="P003" data-name="Pimiento Rojo" data-price="1.50">Añadir</button>
+                    </article>
+                </div>
             </div>
             
-            <div class="cart-items-list" id="cart-items">
-                <p style="padding: 1rem; text-align: center;">El carrito está vacío.</p>
+            <div class="seasonal-group product-section-group">
+                <h4 class="group-title">Producto por temporada</h4> 
+                <div class="seasonal-products-grid product-grid">
+                    
+                    <article class="product-card-category">
+                        <div class="product-image-small">
+                            <img src="/imgProductos/naranja-mesa.png" alt="Naranja Navel" loading="lazy" width="150" height="150">
+                        </div>
+                        <h5>Naranja Navel</h5>
+                        <p class="description">Pieza de naranja de zumo.</p>
+                        <span class="price">€0.35 / pieza</span>
+                        <button class="add-to-cart-btn" data-id="P004" data-name="Naranja Navel" data-price="0.35">Añadir</button>
+                    </article>
+                    
+                    <article class="product-card-category">
+                        <div class="product-image-small">
+                            <img src="/imgProductos/platano-canarias.jpg" alt="Plátano Canarias" loading="lazy" width="150" height="150">
+                        </div>
+                        <h5>Plátano Canarias</h5>
+                        <p class="description">Pieza de plátano.</p>
+                        <span class="price">€0.45 / pieza</span>
+                        <button class="add-to-cart-btn" data-id="P005" data-name="Plátano Canarias" data-price="0.45">Añadir</button>
+                    </article>
+                    
+                    <article class="product-card-category">
+                        <div class="product-image-small">
+                            <img src="/imgProductos/cebolla-blanca.jpg" alt="Cebolla" loading="lazy" width="150" height="150">
+                        </div>
+                        <h5>Cebolla</h5>
+                        <p class="description">Pieza de cebolla.</p>
+                        <span class="price">€0.20 / pieza</span>
+                        <button class="add-to-cart-btn" data-id="P006" data-name="Cebolla" data-price="0.20">Añadir</button>
+                    </article>
+                </div>
             </div>
+        </section>
+    
 
-            <div class="cart-footer">
-                <h4 id="cart-total">Subtotal: €0.00</h4>
-                <a href="procesar_compra.html" class="btn-checkout">Ir a Pagar</a>
-                <button class="btn-continue" onclick="closeCartModal()">Seguir Comprando</button>
-            </div>
-        </div>
-    </div>
+    <div id="cart-modal" class="cart-modal">...</div>
     
     <footer>
         <div class="contact-info">
@@ -166,9 +150,7 @@
         <p>Teléfono: 657 84 40 37</p>
     </footer>
 
-    <script src="/javascript/products-data.js"></script>
-    <script src="/javascript/index-loader.js"></script>
-    <script src="/javascript/cart-logic.js"></script> 
-    <script src="/javascript/categorias.js"></script>
+    <script src="/js/cart-logic.js"></script> 
+    <script src="/js/categorias.js"></script>
 </body>
 </html>
