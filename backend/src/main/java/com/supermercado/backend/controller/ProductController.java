@@ -27,8 +27,8 @@ public class ProductController {
     }
 
     /**
-     * Este es el endpoint para tus pruebas de Postman.
-     * Aquí validaremos la "Defensive Programming" que mencionamos.
+     * Este es el endpoint para pruebas de Postman.
+     * Aquí validaremos la "Defensive Programming".
      */
     @PostMapping("/{id}/purchase")
     public ResponseEntity<?> purchaseProduct(@PathVariable Long id, @RequestParam int quantity) {
