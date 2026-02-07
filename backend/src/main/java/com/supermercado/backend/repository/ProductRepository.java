@@ -7,6 +7,6 @@ import java.util.List;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
-    // Aquí no escribes código. JpaRepository ya sabe hacer SELECT, INSERT y DELETE.
+    // Este metodo es el que usa el buscador
     List<Product> findByNameContainingIgnoreCase(String name);
 }

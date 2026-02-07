@@ -1,0 +1,35 @@
+# Java y Compilación
+*.class
+target/
+*.jar
+*.war
+*.ear
+
+# Maven
+.mvn/
+mvnw
+mvnw.cmd
+
+# Java y Compilación
+*.class
+target/
+*.jar
+*.war
+*.ear
+
+# Maven
+.mvn/
+mvnw
+mvnw.cmd
+
+# IDEs (Archivos locales de tu configuración)
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+
+# Sistema y Log
+*.log
+.DS_Store 

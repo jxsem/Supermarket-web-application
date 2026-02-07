@@ -1,28 +1,44 @@
 package com.supermercado.backend.controller;
 
 import com.supermercado.backend.entity.Product;
-import com.supermercado.backend.repository.ProductRepository;
+import com.supermercado.backend.service.ProductService; // Importamos el servicio
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/products") // 1. Esta es la base
+@RequestMapping("/api/products")
 @CrossOrigin(origins = "*")
 public class ProductController {
 
     @Autowired
-    private ProductRepository productRepository;
+    private ProductService productService; // Inyectamos lógica, no solo datos
 
     @GetMapping
     public List<Product> getAllProducts() {
-        return productRepository.findAll();
+        return productService.findAll(); // El servicio ahora maneja esto
     }
 
-    // 2. Esta ruta se convierte en /api/products/search
-    @GetMapping("/search") // <--- Esto suma: /api/products/search
+    @GetMapping("/search")
     public List<Product> searchProducts(@RequestParam("name") String name) {
-        return productRepository.findByNameContainingIgnoreCase(name);
+        return productService.searchByName(name);
+    }
+
+    /**
+     * Este es el endpoint para tus pruebas de Postman.
+     * Aquí validaremos la "Defensive Programming" que mencionamos.
+     */
+    @PostMapping("/{id}/purchase")
+    public ResponseEntity<?> purchaseProduct(@PathVariable Long id, @RequestParam int quantity) {
+        try {
+            Product updatedProduct = productService.purchaseProduct(id, quantity);
+            return ResponseEntity.ok(updatedProduct);
+        } catch (RuntimeException e) {
+            // Captura el error de stock insuficiente o ID no encontrado
+            // y devuelve un 400 Bad Request con el mensaje de error.
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 }

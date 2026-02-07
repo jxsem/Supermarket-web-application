@@ -5,11 +5,11 @@ import lombok.Data;
 
 @Entity // 1. Le dice a Java: "Esta clase es una tabla de la base de datos"
 @Table(name = "products") // 2. Le dice el nombre exacto de la tabla en MySQL
-@Data // 3. ¡Magia de Lombok! Crea los getters y setters en memoria para que no los veas
+@Data // 2. Crea los getters y setters en memoria para que no los veas
 public class Product {
 
-    @Id // 4. Define la llave primaria
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // 5. Hace que el ID sea autoincremental
+    @Id // 3. Define la llave primaria
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // 4. Hace que el ID sea autoincremental
     private Long id;
 
     @Column(unique = true, nullable = false)
@@ -20,4 +20,5 @@ public class Product {
     private Double price;
     private String category;
     private String imageUrl;
+    private Integer stock;
 }

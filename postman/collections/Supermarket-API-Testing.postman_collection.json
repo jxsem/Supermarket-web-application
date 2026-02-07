@@ -1,0 +1,67 @@
+{
+  "info": {
+    "_postman_id": "aa19d658-d6ad-4083-8597-393e51612141",
+    "name": "Supermarket-API-Testing",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Purchase - Insufficient Stock",
+      "id": "f2491f0c-a196-4b78-a4e9-14937959ef46",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/products/1/purchase?quantity=9999",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "products",
+            "1",
+            "purchase"
+          ],
+          "query": [
+            {
+              "key": "quantity",
+              "value": "9999"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Purchase - Success",
+      "id": "b9f3bef1-1323-4235-bcce-b0f44cffaded",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/products/1/purchase?quantity=40",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "products",
+            "1",
+            "purchase"
+          ],
+          "query": [
+            {
+              "key": "quantity",
+              "value": "40"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
