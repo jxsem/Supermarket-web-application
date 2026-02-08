@@ -4,6 +4,7 @@ import com.supermercado.backend.entity.Product;
 import com.supermercado.backend.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional; // IMPORTANTE
 
 import java.util.List;
 
@@ -13,19 +14,19 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepository;
 
-    // 1. Esto arregla el rojo de findAll()
     public List<Product> findAll() {
         return productRepository.findAll();
     }
 
-    // 2. Esto arregla el rojo de searchByName()
     public List<Product> searchByName(String name) {
         return productRepository.findByNameContainingIgnoreCase(name);
     }
 
-    // 3. Tu lógica de compra (la que probaremos en Postman)
+    // 3. Lógica con control de concurrencia
+    @Transactional // Esto asegura que el bloqueo se mantenga hasta que termine el metodo
     public Product purchaseProduct(Long id, int quantity) {
-        Product product = productRepository.findById(id)
+        // Usaremos findByIdForUpdate (que crearemos ahora en el Repository)
+        Product product = productRepository.findByIdForUpdate(id)
                 .orElseThrow(() -> new RuntimeException("Producto no encontrado con ID: " + id));
 
         if (product.getStock() < quantity) {
