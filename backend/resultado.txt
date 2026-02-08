@@ -1,0 +1,10 @@
+{"category":"ensalada","code":"EN_MIX05","description":"Tarrina de ensalada.","id":14,"imageUrl":"/imgProductos/ensalada-mixta.jpg","name":"Ensalada Mixta","price":2.99,"stock":0}
+Stock insuficiente para: Ensalada Mixta
+Stock insuficiente para: Ensalada Mixta
+Stock insuficiente para: Ensalada Mixta
+Stock insuficiente para: Ensalada Mixta
+Stock insuficiente para: Ensalada Mixta
+Stock insuficiente para: Ensalada Mixta
+Stock insuficiente para: Ensalada Mixta
+Stock insuficiente para: Ensalada Mixta
+Stock insuficiente para: Ensalada Mixta
