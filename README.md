@@ -1,52 +1,40 @@
-🛒 Full-Stack E-Commerce: Supermarket System
-Este sistema es una aplicación de comercio electrónico robusta que conecta una interfaz de usuario dinámica con un backend de alto rendimiento. El proyecto demuestra la integración de una API REST para la gestión de productos y una lógica de cliente compleja para el flujo de compra.
+# 🛒 Full-Stack E-Commerce: Supermarket System
 
-🚀 Funcionalidades Principales
-Arquitectura RESTful: El backend expone endpoints para la gestión integral de productos y búsquedas optimizadas.
+Este sistema es una aplicación de comercio electrónico robusta que conecta una interfaz de usuario dinámica con un backend de alto rendimiento. El proyecto demuestra la integración de una API REST para la gestión de productos y una lógica de negocio defensiva diseñada para entornos concurrentes.
 
-Motor de Búsqueda Inteligente: Implementación de búsquedas por nombre ignorando mayúsculas y minúsculas mediante JPA.
+## 🚀 Funcionalidades Principales
 
-Gestión de Carrito Proactiva: Lógica en JavaScript que maneja el estado del carrito, persistencia en localStorage y actualizaciones dinámicas del DOM.
+* **Arquitectura RESTful:** Backend optimizado con endpoints para gestión de stock y búsquedas dinámicas.
+* **Integridad de Datos (Concurrency Control):** Implementación de **Pessimistic Locking** para prevenir *Race Conditions* en el proceso de compra.
+* **Motor de Búsqueda:** Búsquedas por nombre con normalización de caracteres mediante JPA.
+* **Gestión de Carrito Proactiva:** Lógica en JavaScript con persistencia en `localStorage` y actualizaciones reactivas del DOM.
+* **Validación de Checkout:** Control estricto de datos en el proceso de pago (Regex para CP y teléfonos).
+* **Categorización Dinámica:** Filtrado de productos por categorías sin recarga de página (*Single Page Experience*).
 
-Validación de Checkout: Control estricto de datos en el proceso de pago, incluyendo validación de códigos postales específicos y formatos de teléfono.
+## 🛠️ Stack Tecnológico
 
-Categorización Dinámica: Filtrado de productos por categorías como "Frutas", "Verduras" o "Ensaladas" sin recargar la página.
+**Backend:**
+* **Java 21:** Uso de la última versión LTS.
+* **Spring Boot 3.x:** Framework core para servicios REST.
+* **Spring Data JPA:** Abstracción de capa de datos y control de transacciones.
+* **MySQL/MariaDB:** Almacenamiento persistente.
+* **Lombok:** Optimización de código boilerplate.
 
-🛠️ Stack Tecnológico
-Backend
+**Frontend:**
+* **JavaScript (Vanilla ES6+):** Lógica de negocio en cliente (`cart-logic.js`).
+* **HTML5 & CSS3:** Interfaz de usuario limpia y funcional.
 
-Java 21: Uso de la última versión LTS para mayor eficiencia y modernidad en el lenguaje.
+## 📂 Arquitectura Destacada
 
-Spring Boot 3.x: Framework para la creación de la aplicación y exposición de servicios REST.
+* **`ProductController.java`:** Gestiona el flujo de peticiones. Incluye manejo de excepciones global para errores de stock.
+* **`ProductService.java`:** Contiene la lógica transaccional y el bloqueo de escritura en base de datos.
+* **Defensive Programming:** El sistema valida la disponibilidad de stock en tiempo real antes de confirmar cualquier transacción.
 
-Spring Data JPA: Abstracción de la capa de datos para comunicación con MySQL/MariaDB.
+---
 
-Lombok: Para reducir el código repetitivo en las entidades de datos.
+## ⚡ Pruebas de Concurrencia (Stress Testing)
 
-Frontend
+Para verificar la integridad del stock ante condiciones de carrera, se ha documentado este script de Bash que lanza 10 peticiones `POST` en paralelo:
 
-JavaScript (Vanilla ES6+): Gestión de la lógica del carrito (cart-logic.js) y navegación de categorías.
-
-HTML5 & CSS3: Interfaz de usuario diseñada para una experiencia de supermercado limpia y funcional.
-
-📂 Estructura del Proyecto
-Product.java: Entidad que mapea la tabla products en la base de datos, incluyendo código, nombre, descripción y precio.
-
-ProductController.java: Controlador REST que gestiona las peticiones a /api/products.
-
-checkout-logic.js: Gestiona el resumen del pedido y la lógica de pago (tarjeta o efectivo).
-
-index.html: Punto de entrada principal con buscador integrado y acceso al carrito.
-
-🔧 Configuración para Desarrollo
-Backend:
-
-Asegúrate de tener instalado el JDK 21.
-
-Configura tu base de datos en el archivo application.properties de Spring.
-
-Ejecuta BackendApplication.java.
-
-Frontend:
-
-Sirve los archivos estáticos. Al abrir index.html, el sistema consumirá automáticamente la API en localhost:8080/api/products.
+```bash
+for i in {1..10}; do curl -X POST "http://localhost:8080/api/products/1/purchase?quantity=1" & done; wait
