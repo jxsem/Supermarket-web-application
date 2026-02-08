@@ -17,7 +17,6 @@ const cartTotalElement = document.getElementById('cart-total');
 
 // 2. FUNCIONES DE LÓGICA DEL CARRITO
 
-
 /**
  * Función GLOBAL para añadir un producto al carrito.
  * Es accesible desde categorias.js
@@ -153,9 +152,7 @@ function attachModalButtonListeners() {
     });
 }
 
-
 // 4. FUNCIONES DE CONTROL DEL MODAL
-
 /**
  * Muestra el modal del carrito.
  */
@@ -172,9 +169,7 @@ function closeCartModal() {
     cartModal.classList.remove('visible');
 }
 
-
 // 5. INICIALIZACIÓN (Al cargar el DOM)
-
 
 document.addEventListener('DOMContentLoaded', function() {
     const btnMostrarCarrito = document.getElementById('btn-mostrar-carrito');
